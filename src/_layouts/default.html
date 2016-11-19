@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body {% if page.bannerimage %} class="{{ page.bannerimage }}" {% endif %}">
+    {% include header.html %}
+    {% if page.bannerimage %}
+      <div class="banner"></div>
+    {% endif %}
+    {% if page.bannervid %}
+      <div class="banner">
+        <iframe frameborder="0" height="100%" width="100%"
+    src="https://youtube.com/embed/{{ page.bannervid }}?autoplay=1&controls=0&showinfo=0&autohide=1">
+  </iframe>
+      </div>
+    {% endif %}
+
+    <div id="root"></div>
+
+    <div class="page-content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </div>
+
+    {% include footer.html %}
+    <script type="text/javascript" src="/assets/javascripts/bundle.js" charset="utf-8"></script>
+  </body>
+
+</html>
